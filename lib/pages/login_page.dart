@@ -39,10 +39,15 @@ class LoginPage extends StatelessWidget {
                   Text('From MTN',style: TextStyle(fontWeight: FontWeight.normal,fontSize: 10,color: Color.fromRGBO(204, 131, 35, 1))),
                 ],
               ),
+              
             ),
           ],
         ),
+        
+          
+      
       ),
+      
     );
   }
 }
