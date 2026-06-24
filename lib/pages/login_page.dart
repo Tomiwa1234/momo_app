@@ -8,41 +8,37 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color.fromRGBO(44, 95, 125, 1),
       // AppBar handles the screen header and title widget
-      appBar: AppBar(
-        backgroundColor: Color.fromRGBO(44, 95, 125, 1),
-        title: const Text(
-          'MoMo',
-          style: TextStyle(color: Color.fromRGBO(204, 131, 35, 1)),
-        ),
-        centerTitle: true, // Centers the title text
-        actions: [
-          IconButton(icon: const Icon(Icons.settings), onPressed: () {}),
-        ],
-      ),
+      
+       
+      
       // Body handles the screen's main content layout
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment:
-              CrossAxisAlignment.start, // Aligns items to the left
+        child: Row(
           children: [
-            
-            const Text(
-              'Welcome Back, John!',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 10), // Adds vertical spacing
-            const Text(
-              'Manage your preferences and check updates below.',
-              style: TextStyle(fontSize: 16, color: Colors.grey),
-            ),
-            const SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                ElevatedButton(onPressed: () {}, child: const Text('Edit Bio')),
-                ElevatedButton(onPressed: () {}, child: const Text('Log Out')),
-              ],
+            // Left side: Profile Picture
+            SizedBox(height: 200),
+            SizedBox(width: 100),
+            Image.asset(
+              'assets/momo_icon.png',
+              width: 90,
+              height: 90,
+              fit: BoxFit.cover, 
+              alignment: Alignment.topCenter,// Adjusts how the image fills its boundaries
+           ),
+            SizedBox(width: 1), // Space between picture and text
+
+            // Right side: Text stack (Column wrapped in Expanded)
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start, // Align text to the left
+                mainAxisSize: MainAxisSize.min, // Take up minimum vertical space needed
+                children: [
+                  Text('MoMo', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30,color: Color.fromRGBO(204, 131, 35, 1))),
+                  Text('Payment Service Bank', style: TextStyle(fontWeight: FontWeight.normal,fontSize: 10,color: Color.fromRGBO(204, 131, 35, 1))),
+                  Text('From MTN',style: TextStyle(fontWeight: FontWeight.normal,fontSize: 10,color: Color.fromRGBO(204, 131, 35, 1))),
+                ],
+              ),
             ),
           ],
         ),
