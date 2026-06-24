@@ -1,31 +1,32 @@
 import 'package:flutter/material.dart';
 
-
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
 
-    @override
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromRGBO(44, 95, 125, 1),
       // AppBar handles the screen header and title widget
       appBar: AppBar(
         backgroundColor: Color.fromRGBO(44, 95, 125, 1),
-        title: const Text('MoMo', style: TextStyle(color: Color.fromRGBO(204, 131, 35, 1)),),
+        title: const Text(
+          'MoMo',
+          style: TextStyle(color: Color.fromRGBO(204, 131, 35, 1)),
+        ),
         centerTitle: true, // Centers the title text
         actions: [
-          IconButton(
-            icon: const Icon(Icons.settings),
-            onPressed: () {},
-          ),
+          IconButton(icon: const Icon(Icons.settings), onPressed: () {}),
         ],
       ),
       // Body handles the screen's main content layout
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start, // Aligns items to the left
+          crossAxisAlignment:
+              CrossAxisAlignment.start, // Aligns items to the left
           children: [
+            
             const Text(
               'Welcome Back, John!',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
